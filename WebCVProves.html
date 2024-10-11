@@ -22,7 +22,7 @@
             margin: 0;
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
-            background: linear-gradient(180deg, #393bda, #4590d9, #7edaef, #ffffff, #ffffff);
+            background: linear-gradient(100deg, #4590d9, #7edaef, #ffffff, #ffffff);
             background-size: 200% 200%;
         }
 
@@ -56,6 +56,7 @@
 
         /* Estil per als enllaços de navegació */
         .nav-bar ul li a {
+            white-space: nowrap;
             text-decoration: none;
             color: #000000; /* Color negre intens per al text */
             font-size: 16px;
@@ -176,6 +177,17 @@
             padding: 10px 20px; /* Espaiat intern per donar aire al títol */
         }
 
+        .section1 p, .section7 h3{
+            font-size: 2em;
+            color: #ffffff;
+            margin: 10px;
+            text-shadow:
+                    -1px -1px 0 #000000, /* Ombra negra a l'esquerra i a dalt */
+                    1px -1px 0 #000000,  /* Ombra negra a la dreta i a dalt */
+                    -1px 1px 0 #000000,  /* Ombra negra a l'esquerra i a baix */
+                    1px 1px 0 #000000;   /* Ombra negra a la dreta i a baix */
+        }
+
 
         p, ul {
             font-size: 1.2em;
@@ -210,6 +222,7 @@
             object-fit: cover;
             background: azure;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid black; /* Aquí afegim el borde */
         }
         .skills-container {
             display: flex;
@@ -336,14 +349,6 @@
             position: relative;
         }
 
-        /* Title of the section */
-        .section-title {
-            font-size: 30px;
-            color: #000000; /* Color negre brillant */
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Afegir brillantor al text */
-            margin-bottom: 30px;
-        }
-
         /* Tabs container */
         .tabs-container {
             display: flex;
@@ -378,12 +383,12 @@
         }
 
         /* Experience and Education list */
-        .experience-list, .education-list {
+        .experience-list, .education-list, .language-list, .aboutme-tab p {
             list-style-type: none;
             padding: 0;
         }
 
-        .experience-list li, .education-list li {
+        .experience-list li, .education-list li, .language-list li, .aboutme-tab p {
             font-size: 16px;
             color: #000000;
             margin-bottom: 10px;
@@ -391,7 +396,7 @@
         }
 
         /* Experience lines and education lines */
-        .experience-line, .education-line {
+        .experience-line, .education-line, .language-line {
             display: inline-block;
             width: 10px;
             height: 10px;
@@ -406,6 +411,57 @@
                 flex-direction: column;
             }
         }
+
+        /* Contenidor de les targetes d'habilitats */
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        /* Estil per a cadascuna de les targetes d'habilitats */
+        .skill-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #000000;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombratge lleuger */
+        }
+
+        /* Efecte hover per a les targetes */
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estil per a les imatges dins de les targetes */
+        .skill-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombratge per a les imatges */
+        }
+
+        /* Estil per als títols dins de les targetes */
+        .skill-card h3 {
+            font-size: 1.8em;
+            color: #333333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        /* Ajustos responsius */
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
 
     </style>
 </head>
@@ -437,7 +493,7 @@
         <img src="la_teva_imatge.png" alt="Imatge de Nom" />
         <div>
             <h1>Oriol Ramos Abel</h1>
-            <p class="translatable" style="color: #ffffff;" data-key="Enginyer Informàtic">Enginyer Informàtic</p>
+            <p class="translatable" data-key="Enginyer Informàtic">Enginyer Informàtic</p>
         </div>
     </div>
 </section>
@@ -523,14 +579,17 @@
     <div class="content">
         <h2 class="translatable" data-key="Habilitats en Aprenentatge">Habilitats en Aprenentatge</h2>
         <div class="skills-container">
+            <!-- Targeta 1: Intel·ligència Artificial -->
             <div class="skill-card">
                 <img src="url_imatge_IA.jpg" alt="Intel·ligència Artificial" class="skill-image" />
                 <h3 class="translatable" data-key="Intel·ligència Artificial">Intel·ligència Artificial</h3>
             </div>
+            <!-- Targeta 2: Anàlisi de Dades -->
             <div class="skill-card">
                 <img src="url_imatge_data_analysis.jpg" alt="Anàlisi de Dades" class="skill-image" />
                 <h3 class="translatable" data-key="Anàlisi de Dades">Anàlisi de Dades</h3>
             </div>
+            <!-- Targeta 3: Desenvolupament Web -->
             <div class="skill-card">
                 <img src="url_imatge_web_development.jpg" alt="Desenvolupament Web" class="skill-image" />
                 <h3 class="translatable" data-key="Desenvolupament Web">Desenvolupament Web</h3>
@@ -538,6 +597,7 @@
         </div>
     </div>
 </section>
+
 
 <section id="section6" class="section6">
     <div class="content">
