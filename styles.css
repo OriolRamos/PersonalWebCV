@@ -1,0 +1,443 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(100deg, #4590d9, #7edaef, #ffffff, #ffffff);
+    background-size: 200% 200%;
+}
+
+/* General Style for the Navigation Bar */
+.nav-bar {
+    position: fixed; /* Fa que la barra sigui flotant */
+    top: 20px; /* Afegeix separació amb la part superior */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horitzontalment */
+    background-color: #ffffff; /* Fons blanc */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lleugera ombra per donar profunditat */
+    border-radius: 12px; /* Cantonades arrodonides */
+    border: 1px solid #000000; /* Línia de contorn molt estreta i negra */
+    padding: 10px 20px;
+    z-index: 1000; /* Assegura que la barra es mantingui a sobre del contingut */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* Amplada de la barra, pots ajustar-la */
+    max-width: 1200px;
+}
+
+/* Estil per a la llista d'elements */
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaiat entre elements */
+}
+
+/* Estil per als enllaços de navegació */
+.nav-bar ul li a {
+    white-space: nowrap;
+    text-decoration: none;
+    color: #000000; /* Color negre intens per al text */
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px; /* Cantonades arrodonides per als botons */
+    transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Afegir un toc brillant al text */
+}
+
+/* Canvi de color en passar el cursor per sobre */
+.nav-bar ul li a:hover {
+    background-color: #f8f8f8; /* Fons més clar en passar el cursor */
+    color: #0066ff; /* Text blau brillant en passar el cursor */
+    font-size: 18px; /* Augment lleuger de la mida del text */
+}
+
+/* Estil per a la icona de llenguatge i el selector */
+.language-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Icona de llengua */
+.language-icon i {
+    color: #000000; /* Color de la icona negre */
+    font-size: 18px;
+}
+
+/* Selector d'idioma */
+.language-icon select {
+    background-color: #ffffff; /* Fons blanc sense transparència */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 14px;
+    color: #000000; /* Color del text negre */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Canvi de color quan el selector està en focus */
+.language-icon select:focus {
+    outline: none;
+    background-color: #f0f0f0; /* Canvia el fons en fer clic */
+}
+
+/* Ajustos per a pantalles més petites */
+@media (max-width: 768px) {
+    .nav-bar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar {
+        width: 100%;
+        left: 0;
+        transform: none;
+        top: 10px;
+    }
+}
+
+
+/* Secciones generales */
+section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    transition: opacity 1s ease-in-out;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Fondo de las secciones con degradado */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #e0f7fa 0%, #ffccbc 100%);
+    transition: background-color 1s;
+}
+
+/* Fondo animado por secciones */
+.section1, .section2, .section5, .section6, .section7, .formacio-professional, .perfil {
+    background: none;
+    transition: background-color 1s ease;
+}
+
+
+/* Animación del texto en secciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section h2, section p {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Encabezados */
+h1, h2 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 2.5em;
+    text-shadow:
+            -1px -1px 0 #000000, /* Ombra negra a l'esquerra i a dalt */
+            1px -1px 0 #000000,  /* Ombra negra a la dreta i a dalt */
+            -1px 1px 0 #000000,  /* Ombra negra a l'esquerra i a baix */
+            1px 1px 0 #000000;   /* Ombra negra a la dreta i a baix */
+    padding: 10px 20px; /* Espaiat intern per donar aire al títol */
+}
+
+.section1 p, .section7 h3{
+    font-size: 2em;
+    color: #ffffff;
+    margin: 10px;
+    text-shadow:
+            -1px -1px 0 #000000, /* Ombra negra a l'esquerra i a dalt */
+            1px -1px 0 #000000,  /* Ombra negra a la dreta i a dalt */
+            -1px 1px 0 #000000,  /* Ombra negra a l'esquerra i a baix */
+            1px 1px 0 #000000;   /* Ombra negra a la dreta i a baix */
+}
+
+
+p, ul {
+    font-size: 1.2em;
+    max-width: 800px;
+    padding: 0 20px;
+    color: #000000;
+}
+
+/* Botón de descarga */
+a.download {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff6b6b;
+    padding: 12px 28px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+a.download:hover {
+    background-color: #d9534f;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenido con imágenes redondeadas */
+.content img {
+    border-radius: 5%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    background: azure;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid black; /* Aquí afegim el borde */
+}
+.skills-container {
+    display: flex;
+    justify-content: space-around; /* Espai entre les targetes d'habilitats */
+    flex-wrap: wrap; /* Permet que les targetes es moguin a la següent línia si cal */
+    width: 100%; /* Ocupa tota l'amplada disponible */
+    max-width: 1200px;
+    margin-top: 20px; /* Espai entre el títol i les habilitats */
+}
+
+/* Tarjetas de habilidades */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Efecto flotante */
+}
+
+.skill-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Contenidor per a les icones de llenguatges amb l'efecte de desplaçament */
+.languages-prog-marquee {
+    overflow: hidden; /* Oculta les icones que surten fora de la pantalla */
+    white-space: nowrap; /* Manté tots els elements en la mateixa línia */
+    margin: 0 auto;
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Contenidor intern de les icones */
+.languages-prog-container {
+    display: inline-block;
+    animation: scroll-languages-prog 15s linear infinite; /* Animació per moure les icones de dreta a esquerra */
+}
+
+/* Efecto de hover en iconos de lenguajes */
+.language-prog-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 20px;
+    transition: transform 0.3s;
+}
+
+.language-prog-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Navegación suave entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animació per desplaçar les icones de dreta a esquerra */
+@keyframes scroll-languages-prog {
+    from {
+        transform: translateX(100%); /* Comença des de la dreta */
+    }
+    to {
+        transform: translateX(-100%); /* Es desplaça cap a l'esquerra */
+    }
+}
+
+.section5 .content {
+    display: flex;
+    flex-direction: column; /* Disposar els elements en columna */
+    align-items: center; /* Centrar els elements horitzontalment */
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+/* Listas de experiencia y educación */
+.experience-list, .education-list {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+    line-height: 1.8em;
+}
+
+.experience-line, .education-line {
+    width: 5px;
+    height: 20px;
+    background-color: #ff6b6b;
+    margin-right: 15px;
+    display: inline-block;
+}
+/* Navegación suave entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animació per desplaçar les icones de dreta a esquerra */
+@keyframes scroll-languages-prog {
+    from {
+        transform: translateX(100%); /* Comença des de la dreta */
+    }
+    to {
+        transform: translateX(-100%); /* Es desplaça cap a l'esquerra */
+    }
+}
+
+/*Estil Formacio Profesional*/
+/* General style for the Formació Professional section */
+.formacio-professional {
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+}
+
+/* Tabs container */
+.tabs-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* General style for each tab */
+.tab {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #000000; /* Contorn negre */
+    padding: 20px;
+    flex: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombratge lleuger */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the tabs */
+.tab:hover {
+    transform: translateY(-5px); /* Lleuger efecte flotant */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Augment de l'ombra en passar el cursor */
+}
+
+/* Titles inside tabs */
+.tab h3 {
+    font-size: 20px;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Toc brillant */
+    margin-bottom: 20px;
+}
+
+/* Experience and Education list */
+.experience-list, .education-list, .language-list, .aboutme-tab p {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-list li, .education-list li, .language-list li, .aboutme-tab p {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Lleuger brillantor */
+}
+
+/* Experience lines and education lines */
+.experience-line, .education-line, .language-line {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #007bff; /* Blau per destacar els punts */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tabs-container {
+        flex-direction: column;
+    }
+}
+
+/* Contenidor de les targetes d'habilitats */
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Estil per a cadascuna de les targetes d'habilitats */
+.skill-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #000000;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombratge lleuger */
+}
+
+/* Efecte hover per a les targetes */
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estil per a les imatges dins de les targetes */
+.skill-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombratge per a les imatges */
+}
+
+/* Estil per als títols dins de les targetes */
+.skill-card h3 {
+    font-size: 1.8em;
+    color: #333333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+/* Ajustos responsius */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
