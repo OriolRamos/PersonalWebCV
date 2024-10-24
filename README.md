@@ -50,7 +50,11 @@ These design decisions work together to create an inviting user experience, enco
 
 ### Link to the Figma Project
 
-For a visual representation of the design, you can view the project in Figma: [Figma Project Link](https://www.figma.com/your-project-link)
+For a visual representation of the design, you can view the project in Figma: [Figma Project Link](https://www.figma.com/design/dBFQqfaae5s6nqdWMZJI4B/PersonalWebCV?node-id=0-1&t=zUBnD9G1D6wgQyQN-1)
+
+### Link to the CV Website
+
+For a web representation of the CV, you can view the project in GitHubPages: [Website link](https://oriolramos.github.io/PersonalWebCV/)
 
 ### How to Run the Project
 
