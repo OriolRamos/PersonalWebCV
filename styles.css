@@ -8,6 +8,10 @@ body {
 
 /* Ajustos per a pantalles més petites */
 @media (max-width: 1050px) {
+    .section1{
+        padding-top: 120px;
+    }
+
     .nav-bar {
         padding: 5px; /* Redueix l'espaiat intern */
         flex-direction: row; /* Manté la barra en fila */
