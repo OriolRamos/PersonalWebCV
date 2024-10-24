@@ -6,6 +6,37 @@ body {
     background-size: 200% 200%;
 }
 
+/* Ajustos per a pantalles més petites */
+@media (max-width: 1050px) {
+    .nav-bar {
+        padding: 5px; /* Redueix l'espaiat intern */
+        flex-direction: row; /* Manté la barra en fila */
+        justify-content: center; /* Centra el contingut */
+        width: 55%; /* Amplada de la barra, pots ajustar-la */
+        left: 2.5%; /* Centra la barra horitzontalment */
+    }
+
+    .nav-bar ul {
+        flex-direction: row; /* Manté els elements en una fila */
+        align-items: center; /* Centra els elements verticalment */
+        gap: 10px; /* Redueix l'espai entre elements */
+        margin: 0; /* Elimina el marge de la llista */
+        padding: 0; /* Elimina el padding de la llista */
+        flex-wrap: wrap; /* Permet que els elements es distribueixin en varies línies si és necessari */
+        display: inline-block;
+    }
+
+    .nav-bar ul li {
+        display: inline; /* Assegura que els elements de la llista estiguin en fila */
+    }
+
+    .nav-bar ul li a {
+        font-size: 14px; /* Redueix la mida del text */
+        padding: 4px 8px; /* Redueix l'espaiat intern dels enllaços */
+        white-space: nowrap; /* Evita que el text es divideixi en varies línies */
+    }
+}
+
 /* General Style for the Navigation Bar */
 .nav-bar {
     position: fixed; /* Fa que la barra sigui flotant */
@@ -27,6 +58,7 @@ body {
 
 /* Estil per a la llista d'elements */
 .nav-bar ul {
+    flex-direction: row;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -53,6 +85,7 @@ body {
     color: #0066ff; /* Text blau brillant en passar el cursor */
     font-size: 18px; /* Augment lleuger de la mida del text */
 }
+
 
 /* Estil per a la icona de llenguatge i el selector */
 .language-icon {
@@ -85,30 +118,15 @@ body {
     background-color: #f0f0f0; /* Canvia el fons en fer clic */
 }
 
-/* Ajustos per a pantalles més petites */
-@media (max-width: 768px) {
-    .nav-bar ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-bar {
-        width: 100%;
-        left: 0;
-        transform: none;
-        top: 10px;
-    }
-}
-
 
 /* Secciones generales */
 section {
-    min-height: 70vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
     transition: opacity 1s ease-in-out;
     flex-direction: column;
     position: relative;
@@ -440,4 +458,38 @@ html {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+.footer {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    height: auto; /* Opcional: pots ajustar-ho si vols una alçada fixa */
+}
+
+.footer-separator {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-text {
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+}
+
+.footer-email {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
 }
