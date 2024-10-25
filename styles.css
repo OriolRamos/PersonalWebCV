@@ -8,6 +8,18 @@ body {
 
 /* Ajustos per a pantalles més petites */
 @media (max-width: 1050px) {
+    section {
+        padding: 20px 10px; /* Redueix el padding per adaptar-lo a mòbil */
+        text-align: center; /* Alineació centrada per garantir coherència */
+        max-width: 100%; /* Evita desbordaments horitzontals */
+        overflow: hidden; /* Impedeix desbordament de contingut */
+    }
+
+    .skills-container {
+        flex-direction: column; /* Col·locar les targetes en columna en pantalles petites */
+        gap: 10px;
+    }
+
     .section1{
         padding-top: 120px;
     }
@@ -154,11 +166,8 @@ section {
     transition: background-color 1s ease;
 }
 
-
-/* Animación del texto en secciones */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.section1{
+    padding-top: 120px;
 }
 
 section h2, section p {
