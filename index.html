@@ -50,8 +50,8 @@
                 margin: 0;
                 padding: 0;
                 background-color: #ffffff;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+                width: 100%;
+                height: auto;
             }
             .no-print {
                 display: none;
@@ -64,17 +64,23 @@
             .container {
                 width: 100%;
                 max-width: none;
-                height: 100%;
+                height: auto;
                 margin: 0;
                 padding: 0;
                 box-shadow: none !important;
                 border-radius: 0;
                 border: none;
+                overflow: visible !important; /* Molt important per evitar talls */
             }
             
-            /* Assegurem que l'estructura flex ocupi tota l'alçada */
+            /* Assegurem que l'estructura flex no tingui alçada fixa */
             .md\:flex {
-                height: 100vh;
+                height: auto;
+            }
+
+            /* Evitem que les seccions es trenquin entre pàgines */
+            section, .space-y-6 > div {
+                break-inside: avoid;
             }
         }
     </style>
