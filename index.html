@@ -17,27 +17,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Custom styles */
+        /* Estils generals */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* light gray background for the page */
+            background-color: #f3f4f6;
         }
         .container {
             max-width: 900px;
         }
-        /* Hide print button when printing */
-        @media print {
-            .no-print {
-                display: none;
-            }
-            body {
-                background-color: #ffffff;
-            }
-            .cv-shadow {
-                box-shadow: none;
-            }
-        }
-        /* Custom progress bar for skills */
         .progress-bar {
             background-color: #e0e0e0;
             border-radius: 9999px;
@@ -47,27 +34,67 @@
         .progress {
             height: 100%;
             border-radius: 9999px;
-            background-color: #4f46e5; /* indigo-600 */
+            background-color: #4f46e5;
+        }
+
+        /* Estils per a la impressió */
+        @media print {
+            /* Forcem la impressió de colors i fons */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Ocultem el botó d'imprimir i ajustem el cos de la pàgina */
+            body, html {
+                margin: 0;
+                padding: 0;
+                background-color: #ffffff;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+            .p-4, .sm\:p-8 {
+                padding: 0 !important;
+            }
+
+            /* Ajustem el contenidor principal per ocupar tota la pàgina A4 */
+            .container {
+                width: 100%;
+                max-width: none;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none !important;
+                border-radius: 0;
+                border: none;
+            }
+            
+            /* Assegurem que l'estructura flex ocupi tota l'alçada */
+            .md\:flex {
+                height: 100vh;
+            }
         }
     </style>
 </head>
 <body class="p-4 sm:p-8">
 
-    <!-- Botó per imprimir -->
+    <!-- Botó per imprimir (no es mostrarà al PDF) -->
     <div class="container mx-auto text-right mb-4 no-print">
         <button onclick="window.print()" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-indigo-700 transition-colors duration-300">
             <i class="fas fa-print mr-2"></i>Imprimir / Guardar com a PDF
         </button>
     </div>
 
-    <!-- Main CV container -->
+    <!-- CV Principal -->
     <div class="container mx-auto bg-white rounded-xl shadow-lg cv-shadow overflow-hidden">
         <div class="md:flex">
-            <!-- Columna Esquerra (Dades de contacte i habilitats) -->
+            <!-- Columna Esquerra -->
             <div class="md:w-1/3 bg-gray-800 p-8 text-white">
                 <div class="flex justify-center md:justify-start">
                      <div class="w-32 h-32 rounded-full bg-gray-700 flex items-center justify-center mb-6 overflow-hidden border-4 border-indigo-400">
-                         <!-- Profile picture -->
                          <img src="IMG_2698.jpg" alt="Foto de perfil d'Oriol Ramos" class="h-full w-full object-cover">
                      </div>
                 </div>
@@ -115,7 +142,7 @@
                 </div>
             </div>
 
-            <!-- Columna Dreta (Experiència i Formació) -->
+            <!-- Columna Dreta -->
             <div class="md:w-2/3 p-8">
                 <section>
                     <h3 class="text-2xl font-bold text-gray-800 border-b-4 border-indigo-500 pb-2 mb-6"><i class="fas fa-user-tie mr-3 text-indigo-500"></i>SOBRE MI</h3>
@@ -127,7 +154,6 @@
                 <section class="mt-10">
                     <h3 class="text-2xl font-bold text-gray-800 border-b-4 border-indigo-500 pb-2 mb-6"><i class="fas fa-briefcase mr-3 text-indigo-500"></i>EXPERIÈNCIA I PROJECTES</h3>
                     <div class="space-y-6">
-                        <!-- Projecte Personal -->
                         <div>
                             <div class="flex justify-between items-baseline">
                                 <h4 class="text-lg font-bold text-indigo-700">Desenvolupador Projecte Personal - Clothy.es</h4>
@@ -140,7 +166,6 @@
                                 <li>Creació i desplegament d'una plataforma web completa.</li>
                             </ul>
                         </div>
-                        <!-- Experiència 1 -->
                         <div>
                             <div class="flex justify-between items-baseline">
                                 <h4 class="text-lg font-bold text-indigo-700">Desenvolupador Web Full-Stack (Pràctiques)</h4>
@@ -159,7 +184,6 @@
                 <section class="mt-10">
                     <h3 class="text-2xl font-bold text-gray-800 border-b-4 border-indigo-500 pb-2 mb-6"><i class="fas fa-graduation-cap mr-3 text-indigo-500"></i>FORMACIÓ ACADÈMICA</h3>
                      <div class="space-y-6">
-                        <!-- Formació 1: Master -->
                         <div>
                             <div class="flex justify-between items-baseline">
                                 <h4 class="text-lg font-bold text-indigo-700">Màster en Intel·ligència Artificial</h4>
@@ -168,7 +192,6 @@
                             <p class="text-md font-semibold text-gray-700">Universidad Internacional de La Rioja (UNIR)</p>
                             <p class="mt-2 text-gray-700">Especialització en aprenentatge automàtic, processament del llenguatge natural i visió per computador.</p>
                         </div>
-                        <!-- Formació 2: Grau -->
                         <div>
                             <div class="flex justify-between items-baseline">
                                 <h4 class="text-lg font-bold text-indigo-700">Grau en Enginyeria Informàtica</h4>
